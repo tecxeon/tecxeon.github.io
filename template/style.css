@@ -605,6 +605,12 @@ video {
   width: 100%;
 }
 
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -644,7 +650,7 @@ video {
 
 .bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(36 44 44 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-secondary {
@@ -664,8 +670,8 @@ video {
   background-repeat: no-repeat;
 }
 
-.p-20 {
-  padding: 5rem;
+.p-14 {
+  padding: 3.5rem;
 }
 
 .px-12 {
@@ -683,9 +689,9 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-3 {
@@ -709,7 +715,7 @@ video {
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgb(36 44 44 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-secondary {

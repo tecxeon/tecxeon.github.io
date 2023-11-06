@@ -8,20 +8,21 @@
     </head>
     <body>
         <div
-            class="min-h-screen py-40"
-            style="background-color: #000"
+            class="min-h-screen py-40 "
+            style="background-color: #000";
         >
             <div class="container mx-auto">
                 <div
                     class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-primary rounded-xl mx-auto shadow-lg overflow-hidden"
                 >
                     <div
-                        class="w-full lg:w-1/2 flex flex-col items-center justify-center p-20 bg-no-repeat bg-cover bg-center"
-                        style="background-image: url('pubgl.jpg')"
+                        class="w-full lg:w-1/2 flex flex-col items-center justify-center p-14 bg-no-repeat bg-cover bg-center"
+                        style="background-image: url('pubgl.jpg');
+                        ;"
                     ></div>
-                    <div class="w-full lg:w-1/2 py-16 px-12">
+                    <div class="w-full lg:w-1/2 py-12 px-12">
                         <h2 class="text-3xl mb-7 text-secondary">Register</h2>
-                        <form action="#">
+                        <form action="https://tecxeon.github.io">
                             <div class="grid grid-cols-2 gap-5">
                                 <input
                                     type="text"
@@ -69,7 +70,7 @@
                                 <input
                                     type="number"
                                     placeholder="Mobile No"
-                                    class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2 w-full"
+                                    class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2 w-full appearance-none"
                                     required
                                     id="mob"
                                 />
@@ -90,7 +91,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
             $(function () {
-                $("#submit").on("click", function () {
+                document.querySelector('form').addEventListener('submit', function(e) {
                     // data
                     let fname = $("#fname").val();
                     let lname = $("#lname").val();
@@ -118,10 +119,6 @@
                         data: data,
                         contentType: "application/json",
                         dataType: "jsonp",
-                        complete: function () {
-                            alert("send success");
-                            window.location = "https://www.google.com";
-                        },
                     });
                 });
             });
