@@ -5,122 +5,129 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Register Now</title>
         <link rel="stylesheet" href="style.css" />
+        <style>
+            /* Hide the up and down arrows on number inputs */
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+        </style>
     </head>
     <body>
         <div
-            class="min-h-screen py-40 "
-            style="background-color: #000";
+            class="h-screen flex flex-col lg:flex-row w-full lg:w-full bg-primary mx-auto"
         >
-            <div class="container mx-auto">
-                <div
-                    class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-primary rounded-xl mx-auto shadow-lg overflow-hidden"
-                >
-                    <div
-                        class="w-full lg:w-1/2 flex flex-col items-center justify-center p-14 bg-no-repeat bg-cover bg-center"
-                        style="background-image: url('pubgl.jpg');
-                        ;"
-                    ></div>
-                    <div class="w-full lg:w-1/2 py-12 px-12">
-                        <h2 class="text-3xl mb-7 text-secondary">Register</h2>
-                        <form action="https://tecxeon.github.io">
-                            <div class="grid grid-cols-2 gap-5">
-                                <input
-                                    type="text"
-                                    placeholder="Firstname"
-                                    class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
-                                    required
-                                    id="fname"
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Lastname"
-                                    class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
-                                    required
-                                    id="lname"
-                                />
-                            </div>
-                            <div class="mt-5">
-                                <div class="grid grid-cols-2 gap-5">
-                                    <input
-                                        type="text"
-                                        placeholder="Branch"
-                                        class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
-                                        required
-                                        id="branch"
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Semester"
-                                        class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
-                                        required
-                                        id="sem"
-                                    />
-                                </div>
-                            </div>
-                            <div class="mt-5">
-                                <input
-                                    type="text"
-                                    placeholder="Institution"
-                                    class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2 w-full"
-                                    required
-                                    id="inst"
-                                />
-                            </div>
-                            <div class="mt-5">
-                                <input
-                                    type="number"
-                                    placeholder="Mobile No"
-                                    class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2 w-full appearance-none"
-                                    required
-                                    id="mob"
-                                />
-                            </div>
-                            <div class="mt-6">
-                                <button
-                                    class="w-full bg-secondary py-3 text-center text-primary"
-                                    id="submit"
-                                >
-                                    Register Now
-                                </button>
-                            </div>
-                        </form>
+            <div
+                class="w-full lg:w-1/2 flex flex-col items-center justify-center py-32 mt-5 bg-no-repeat bg-cover bg-center"
+                style="background-image: url('pubgl.jpg')"
+            ></div>
+            <div
+                class="w-full lg:w-1/2 bg-primary flex flex-col justify-center items-center"
+            >
+                <h2 class="text-3xl mb-7 text-secondary">Registration</h2>
+                <form action="https://tecxeon.github.io" class="w-3/4">
+                    <div class="grid grid-cols-2 gap-5">
+                        <input
+                            type="text"
+                            placeholder="Firstname"
+                            class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
+                            required
+                            id="fname"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Lastname"
+                            class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
+                            required
+                            id="lname"
+                        />
                     </div>
-                </div>
+                    <div class="mt-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <input
+                                type="text"
+                                placeholder="Branch"
+                                class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
+                                required
+                                id="branch"
+                            />
+                            <input
+                                type="text"
+                                placeholder="Semester"
+                                class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2"
+                                required
+                                id="sem"
+                            />
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <input
+                            type="text"
+                            placeholder="Institution"
+                            class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2 w-full"
+                            required
+                            id="inst"
+                        />
+                    </div>
+                    <div class="mt-5">
+                        <input
+                            type="number"
+                            placeholder="Mobile No"
+                            class="border border-secondary bg-primary outline-none placeholder-secondary text-secondary py-1 px-2 w-full appearance-none"
+                            required
+                            id="mob"
+                        />
+                    </div>
+                    <div class="mt-6">
+                        <button
+                            class="w-full bg-secondary py-3 text-center text-primary transform transition duration-1000 ease-out focus:outline-none focus:shadow-outline active:bg-primary active:text-secondary"
+                            id="submit"
+                        >
+                            Register Now
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
             $(function () {
-                document.querySelector('form').addEventListener('submit', function(e) {
-                    // data
-                    let fname = $("#fname").val();
-                    let lname = $("#lname").val();
-                    let branch = $("#branch").val();
-                    let sem = $("#sem").val();
-                    let inst = $("#inst").val();
-                    let mob = $("#mob").val();
+                document
+                    .querySelector("form")
+                    .addEventListener("submit", function (e) {
+                        // data
+                        let fname = $("#fname").val();
+                        let lname = $("#lname").val();
+                        let branch = $("#branch").val();
+                        let sem = $("#sem").val();
+                        let inst = $("#inst").val();
+                        let mob = $("#mob").val();
 
-                    // url
-                    const url =
-                        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdrwBNEqWUJYhf7BHhYv2jVpSBUfBKyWOIsi6KsrNLMYfWlzw/formResponse";
+                        // url
+                        const url =
+                            "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdrwBNEqWUJYhf7BHhYv2jVpSBUfBKyWOIsi6KsrNLMYfWlzw/formResponse";
 
-                    // post
-                    let data = {
-                        "entry.1447400634": fname,
-                        "entry.579354149": lname,
-                        "entry.616355013": branch,
-                        "entry.1027570089": sem,
-                        "entry.678185229": inst,
-                        "entry.1423283227": mob,
-                    };
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: data,
-                        contentType: "application/json",
-                        dataType: "jsonp",
+                        // post
+                        let data = {
+                            "entry.1447400634": fname,
+                            "entry.579354149": lname,
+                            "entry.616355013": branch,
+                            "entry.1027570089": sem,
+                            "entry.678185229": inst,
+                            "entry.1423283227": mob,
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: data,
+                            contentType: "application/json",
+                            dataType: "jsonp",
+                        });
                     });
-                });
             });
         </script>
         <!-- https://docs.google.com/spreadsheets/d/1xv9qvKfg-4qKd6lhSBOI7exhTqF5KxL6qcWZl3jd8Og/edit?usp=sharing -->

@@ -4,8 +4,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#565248",
-                secondary: "#DDD2BC",
+                primary: "#000",
+                secondary: "#fff",
             },
             textColor: ["responsive", "hover", "focus", "placeholder"],
         },
