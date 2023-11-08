@@ -568,6 +568,10 @@ video {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .absolute {
   position: absolute;
 }
@@ -603,6 +607,10 @@ video {
 
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -700,7 +708,7 @@ video {
 
 .bg-button {
   --tw-bg-opacity: 1;
-  background-color: rgb(110 36 53 / var(--tw-bg-opacity));
+  background-color: rgb(215 19 19 / var(--tw-bg-opacity));
 }
 
 .bg-lbox {
@@ -784,6 +792,10 @@ video {
 .text-\[\#B7B7B7\] {
   --tw-text-opacity: 1;
   color: rgb(183 183 183 / var(--tw-text-opacity));
+}
+
+.text-labelColor {
+  color: rgba(187, 187, 191, 0.4);
 }
 
 .text-white {
