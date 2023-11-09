@@ -32,7 +32,9 @@
     </head>
     <body
         class="bg-no-repeat bg-cover bg-center"
-        style="background-image: url('f.jpg')"
+        style="
+            background-image: url('https://wstatic-prod.pubg.com/web/live/main_043cac5/img/aeca002.jpg');
+        "
     >
         <div
             id="banner"
@@ -53,14 +55,14 @@
                     <div
                         class="hidden w-full lg:w-1/2 lg:flex flex-col items-center justify-center py-16 bg-no-repeat bg-cover bg-center"
                         style="
-                            background-image: url('https://img.freepik.com/free-photo/male-soccer-player-with-ball-grass-field_23-2150821530.jpg?t=st=1699435311~exp=1699438911~hmac=c41fce1544885fd5bf4dd6e26d10faaffb28c0687f7cb2770438191a4263e182&w=900');
+                            background-image: url('https://wstatic-prod.pubg.com/web/live/main_043cac5/img/aeca002.jpg');
                         "
                     ></div>
                     <div class="bg-boxColor w-full lg:w-1/2 lg:py-6 py-9 px-6">
                         <h2
                             class="text-white text-3xl mb-10 text-center font-bold leading-10"
                         >
-                            E-Football <br />Championship
+                            PUBG <br />Championship
                         </h2>
                         <form action="post">
                             <div class="mb-6">
@@ -103,7 +105,7 @@
                                 <input
                                     type="text"
                                     placeholder="College"
-                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full roundedc"
+                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full rounded"
                                     required
                                     id="inst"
                                 />
@@ -117,35 +119,6 @@
                                     id="mob"
                                 />
                             </div>
-                            <div class="mb-6">
-                                <select
-                                    id="mode"
-                                    onchange="this.classList.add('text-white'); this.classList.remove('text-labelColor')"
-                                    class="bg-lbox text-labelColor rounded outline-none w-full py-2 px-3 appearance-none"
-                                    required
-                                >
-                                    <option selected disabled value="invalid">
-                                        Game Type
-                                    </option>
-                                    <option class="text-white" value="1 VS 1">
-                                        1 VS 1
-                                    </option>
-                                    <option class="text-white" value="2 VS 2">
-                                        2 VS 2
-                                    </option>
-                                    <option class="text-white" value="Both">
-                                        Both
-                                    </option>
-                                </select>
-                            </div> 
-                            <div class="mb-6">
-                                <input
-                                    type="text"
-                                    placeholder="Teammate Name"
-                                    class="hidden bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                    id="name2"
-                                />
-                            </div> 
                             <button
                                 class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
                                 id="submit"
@@ -174,23 +147,19 @@
                     let sem = $("#sem").val();
                     let inst = $("#inst").val();
                     let mob = $("#mob").val();
-                    let mode = $("#mode").val();
-                    let name2 = $("#name2").val();
 
                     // url
                     const url =
-                        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSch3ro-q3C7tQWJi1mwQEo7mJMnjd8Ymb8UyR4JZNAYFrVIEA/formResponse";
+                        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdrwBNEqWUJYhf7BHhYv2jVpSBUfBKyWOIsi6KsrNLMYfWlzw/formResponse";
 
                     // post
                     let data = {
-                        "entry.428304624": fname,
-                        "entry.339795661": lname,
-                        "entry.33584300": branch,
-                        "entry.159500214": sem,
-                        "entry.2008588683": inst,
-                        "entry.721650319": mob,
-                        "entry.1141159496":mode,
-                        "entry.440509055": name2,
+                        "entry.1447400634": fname,
+                        "entry.579354149": lname,
+                        "entry.616355013": branch,
+                        "entry.1027570089": sem,
+                        "entry.678185229": inst,
+                        "entry.1423283227": mob,
                     };
                     $.ajax({
                         type: "POST",
@@ -225,43 +194,6 @@
                 input.addEventListener("input", function (event) {
                     this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
                 });
-            });
-
-            const form = document.querySelector("#submit");
-            const gameType = document.querySelector("#mode");
-            const teammateInput = document.querySelector("#name2");
-
-            form.addEventListener("click", function (e) {
-                // Check if the game type field's value is valid
-                if (gameType.value === "invalid") {
-                    gameType.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
-                }
-            });
-            gameType.addEventListener("change", function (e) {
-                // Check if the game type field's value is valid
-
-                gameType.classList.remove("border-red-500", "border");
-                if (this.value === "2 VS 2" || this.value === "Both") {
-                    // If it is, make the teammate input box visible
-                    teammateInput.style.display = "block";
-                    teammateInput.required = true;
-                    teammateInput.addEventListener("invalid", function (event) {
-                        // Prevent the browser's default validation UI
-                        event.preventDefault();
-
-                        // Add a red border to the input field
-                        this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
-                    });
-
-                    // Listen for the input event to reset the border color when the user starts typing
-                    teammateInput.addEventListener("input", function (event) {
-                        this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
-                    });
-                } else {
-                    // If it's not, hide the teammate input box and make it not required
-                    teammateInput.style.display = "none";
-                    teammateInput.required = false;
-                }
             });
         </script>
         <!-- https://docs.google.com/spreadsheets/d/1xv9qvKfg-4qKd6lhSBOI7exhTqF5KxL6qcWZl3jd8Og/edit?usp=sharing -->

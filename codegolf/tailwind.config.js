@@ -4,8 +4,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                boxColor: "#020003",
-                button: "#116fc7",
+                boxColor: "rgba(22, 24, 32)",
+                button: "#D84E00",
                 labelColor: "rgba(187, 187, 191, 0.4)",
                 lbox: "#2f3138",
             },
@@ -22,4 +22,3 @@ module.exports = {
     },
     plugins: [],
 };
-("https://media.contentapi.ea.com/content/dam/gin/images/2019/06/fifa20-gin-keyart.jpg.adapt.crop1x1.767p.jpg");

@@ -568,10 +568,6 @@ video {
   }
 }
 
-.visible {
-  visibility: visible;
-}
-
 .absolute {
   position: absolute;
 }
@@ -607,10 +603,6 @@ video {
 
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-
-.block {
-  display: block;
 }
 
 .flex {
@@ -703,12 +695,12 @@ video {
 
 .bg-boxColor {
   --tw-bg-opacity: 1;
-  background-color: rgb(2 0 3 / var(--tw-bg-opacity));
+  background-color: rgba(22, 24, 32, var(--tw-bg-opacity));
 }
 
 .bg-button {
   --tw-bg-opacity: 1;
-  background-color: rgb(17 111 199 / var(--tw-bg-opacity));
+  background-color: rgb(216 78 0 / var(--tw-bg-opacity));
 }
 
 .bg-lbox {
@@ -792,10 +784,6 @@ video {
 .text-\[\#B7B7B7\] {
   --tw-text-opacity: 1;
   color: rgb(183 183 183 / var(--tw-text-opacity));
-}
-
-.text-labelColor {
-  color: rgba(187, 187, 191, 0.4);
 }
 
 .text-white {
