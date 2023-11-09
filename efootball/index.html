@@ -62,7 +62,7 @@
                         >
                             E-Football <br />Championship
                         </h2>
-                        <form action="post">
+                        <form id="form">
                             <div class="mb-6">
                                 <div class="grid grid-cols-2 gap-5">
                                     <input
@@ -71,6 +71,7 @@
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
                                         required
                                         id="fname"
+                                        name="fname"
                                     />
                                     <input
                                         type="text"
@@ -78,6 +79,7 @@
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
                                         required
                                         id="lname"
+                                        name="lname"
                                     />
                                 </div>
                             </div>
@@ -89,6 +91,7 @@
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
                                         required
                                         id="branch"
+                                        name="branch"
                                     />
                                     <input
                                         type="number"
@@ -96,6 +99,7 @@
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
                                         required
                                         id="sem"
+                                        name="semester"
                                     />
                                 </div>
                             </div>
@@ -103,9 +107,10 @@
                                 <input
                                     type="text"
                                     placeholder="College"
-                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full roundedc"
+                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full rounded"
                                     required
                                     id="inst"
+                                    name="college"
                                 />
                             </div>
                             <div class="mb-6">
@@ -115,6 +120,7 @@
                                     class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
                                     required
                                     id="mob"
+                                    name="mob"
                                 />
                             </div>
                             <div class="mb-6">
@@ -122,6 +128,7 @@
                                     id="mode"
                                     onchange="this.classList.add('text-white'); this.classList.remove('text-labelColor')"
                                     class="bg-lbox text-labelColor rounded outline-none w-full py-2 px-3 appearance-none"
+                                    name="gametype"
                                     required
                                 >
                                     <option selected disabled value="invalid">
@@ -137,15 +144,16 @@
                                         Both
                                     </option>
                                 </select>
-                            </div> 
+                            </div>
                             <div class="mb-6">
                                 <input
                                     type="text"
                                     placeholder="Teammate Name"
                                     class="hidden bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
                                     id="name2"
+                                    name="teammate"
                                 />
-                            </div> 
+                            </div>
                             <button
                                 class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
                                 id="submit"
@@ -162,51 +170,27 @@
                 <h3 class="text-[#B7B7B7]">Made with ❤ by tecxeon</h3>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
-            $(function () {
-                $("form").on("submit", function (e) {
-                    e.preventDefault();
-                    // data
-                    let fname = $("#fname").val();
-                    let lname = $("#lname").val();
-                    let branch = $("#branch").val();
-                    let sem = $("#sem").val();
-                    let inst = $("#inst").val();
-                    let mob = $("#mob").val();
-                    let mode = $("#mode").val();
-                    let name2 = $("#name2").val();
+            const form = document.querySelector("#form");
+            const submit = document.querySelector("#submit");
 
-                    // url
-                    const url =
-                        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSch3ro-q3C7tQWJi1mwQEo7mJMnjd8Ymb8UyR4JZNAYFrVIEA/formResponse";
+            const scriptURL =
+                "https://script.google.com/macros/s/AKfycbwu8WZDZKOnMLxcPMY-CCRRb0NYiQMBe9Lk8ALiwnUu4vIrV5AqUrYU25IPmmrO_qZ3/exec";
 
-                    // post
-                    let data = {
-                        "entry.428304624": fname,
-                        "entry.339795661": lname,
-                        "entry.33584300": branch,
-                        "entry.159500214": sem,
-                        "entry.2008588683": inst,
-                        "entry.721650319": mob,
-                        "entry.1141159496":mode,
-                        "entry.440509055": name2,
-                    };
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: data,
-                        contentType: "application/json",
-                        dataType: "jsonp",
-                        complete: function () {
-                            // Clear the input fields
-                            $("form")[0].reset();
-
-                            // Redirect to google.com
-                            window.location.href = "https://tecxeon.github.io";
-                        },
+            form.addEventListener("submit", (e) => {
+                submit.disabled = true;
+                e.preventDefault();
+                let requestBody = new FormData(form);
+                fetch(scriptURL, { method: "POST", body: requestBody })
+                    .then((response) => {
+                        // form.reset();
+                        // window.location.href = "https://tecxeon.github.io";
+                        submit.disabled = false;
+                    })
+                    .catch((error) => {
+                        alert("Error!", error.message);
+                        submit.disabled = false;
                     });
-                });
             });
             // Select all required input elements
             const inputs = document.querySelectorAll("input[required]");
@@ -227,11 +211,10 @@
                 });
             });
 
-            const form = document.querySelector("#submit");
             const gameType = document.querySelector("#mode");
             const teammateInput = document.querySelector("#name2");
 
-            form.addEventListener("click", function (e) {
+            submit.addEventListener("click", function (e) {
                 // Check if the game type field's value is valid
                 if (gameType.value === "invalid") {
                     gameType.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
