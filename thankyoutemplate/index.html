@@ -10,30 +10,6 @@
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400&display=swap"
             rel="stylesheet"
         />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            boxColor: "#15181F",
-                            button: "#D84E00",
-                            labelColor: "rgba(187, 187, 191, 0.4)",
-                            lbox: "#2f3138",
-                        },
-                        fontFamily: {
-                            sans: ["Outfit", "sans-serif"],
-                        },
-                        boxShadow: {
-                            custom: "0 10px 30px rgba(0, 0, 0, 0.5)",
-                        },
-                        lineHeight: {
-                            10: "2.5rem",
-                        },
-                    },
-                },
-            };
-        </script>
         <style>
             /* Hide the up and down arrows on number inputs */
             input[type="number"]::-webkit-inner-spin-button,
@@ -102,20 +78,28 @@
                                 <div
                                     class="text-sm text-[#97969C] mb-5 text-center"
                                 >
-                                    Send the registration fee to this up ID
+                                    Send the registration fee of ₹60 to this UPI
+                                    ID
                                     <br />
-                                    <div class="text-white">
-                                        randomid@okhdfcbank
-                                    </div>
+                                    <a
+                                        class="text-white"
+                                        href="upi://pay?pa=anandunandu678@oksbi&pn=Anandu&am=60.00&cu=INR&aid=uGICAgMDAw-OFBw"
+                                    >
+                                        anandunandu678@oksbi
+                                    </a>
                                 </div>
                                 <div
                                     class="flex flex-col md:flex-row rounded-2xl mx-auto overflow-hidden mb-3"
                                 >
-                                    <img
-                                        src="d.jpg"
-                                        alt="qrcode"
-                                        class="w-52 h-52 rounded-2xl mx-auto overflow-hidden"
-                                    />
+                                    <a
+                                        href="upi://pay?pa=anandunandu678@oksbi&pn=Anandu&am=60.00&cu=INR&aid=uGICAgMDAw-OFBw"
+                                    >
+                                        <img
+                                            src="qr.png"
+                                            alt="qrcode"
+                                            class="w-52 h-52 rounded-2xl mx-auto overflow-hidden"
+                                        />
+                                    </a>
                                 </div>
                             </div>
                             <!-- 2nd box-->
@@ -133,15 +117,16 @@
                                     to this number
                                     <br />
                                     <div class="text-white text-lg">
-                                        +91 12345 67980
+                                        +91 89213 34667
                                     </div>
                                 </div>
-                                <button
+                                <a
                                     class="w-full bg-[#3F8961] py-4 text-center text-white active:bg-white active:text-black rounded"
                                     id="submit"
+                                    href="https://api.whatsapp.com/send?phone=918921334667"
                                 >
                                     Chat Now
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -252,6 +237,5 @@
                 });
             });
         </script>
-        <!-- https://docs.google.com/spreadsheets/d/1xv9qvKfg-4qKd6lhSBOI7exhTqF5KxL6qcWZl3jd8Og/edit?usp=sharing -->
     </body>
 </html>
