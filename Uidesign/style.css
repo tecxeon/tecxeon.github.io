@@ -700,7 +700,7 @@ video {
 
 .bg-button {
   --tw-bg-opacity: 1;
-  background-color: rgb(216 78 0 / var(--tw-bg-opacity));
+  background-color: rgb(75 0 130 / var(--tw-bg-opacity));
 }
 
 .bg-lbox {
@@ -735,7 +735,7 @@ video {
 }
 
 .py-16 {
-  padding-top: 4rem;
+  padding-top: 15rem;
   padding-bottom: 4rem;
 }
 
@@ -745,7 +745,7 @@ video {
 }
 
 .py-40 {
-  padding-top: 10rem;
+  padding-top: 2rem;
   padding-bottom: 10rem;
 }
 
@@ -784,6 +784,10 @@ video {
 .text-\[\#B7B7B7\] {
   --tw-text-opacity: 1;
   color: rgb(183 183 183 / var(--tw-text-opacity));
+}
+
+.text-labelColor {
+  color: rgba(187, 187, 191, 0.4);
 }
 
 .text-white {
