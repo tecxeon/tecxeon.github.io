@@ -4,10 +4,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                boxColor: "rgba(22, 24, 32)",
-                button: "#D84E00",
-                labelColor: "rgba(187, 187, 191, 0.4)",
-                lbox: "#2f3138",
+                boxColor: "#030430",
+                button: "#4842ff",
+                labelColor: "#acadaf",
+                lbox: "#050650",
             },
             fontFamily: {
                 sans: ["Outfit", "sans-serif"],

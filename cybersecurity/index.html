@@ -32,9 +32,7 @@
     </head>
     <body
         class="bg-no-repeat bg-cover bg-center"
-        style="
-            background-image: url('side.jpg');
-        "
+        style="background-image: url('side.jpg')"
     >
         <div
             id="banner"
@@ -47,28 +45,24 @@
                 style="background-image: url(tecxeonW.png)"
             ></div>
         </div>
-        <div class="relative min-h-screen py-40 backdrop-blur-sm">
+        <div class="relative min-h-screen md:py-40 py-20 backdrop-blur-sm">
             <div class="container mx-auto relative">
                 <div
                     class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 rounded-2xl shadow-custom mx-auto overflow-hidden"
                 >
                     <div
-                        class="w-full lg:w-1/2 lg:flex flex-col items-center justify-center py-16 bg-no-repeat bg-cover bg-center"
-                        style="
-                            background-image: url('bg.jpg');
-                        "
+                        class="w-full lg:w-1/2 lg:flex flex-col items-center justify-center lg:py-16 py-40 md:py-80 bg-no-repeat bg-cover bg-center"
+                        style="background-image: url('bg.jpg')"
                     ></div>
                     <div class="bg-boxColor w-full lg:w-1/2 lg:py-6 py-9 px-6">
-                        <h2
-                            class="text-white text-3xl text-center font-bold"
-                        >
+                        <h2 class="text-white text-3xl text-center font-bold">
                             Cyber Security Workshop
                         </h2>
                         <div
                             class="text-white text-3sm text-center font-bold leading-10 mb-10"
                         >
                             Tuesday, 14 Nov
-                    </div>
+                        </div>
                         <form action="post">
                             <div class="mb-6">
                                 <div class="grid grid-cols-2 gap-5">
@@ -108,21 +102,42 @@
                             </div>
                             <div class="mb-6">
                                 <input
-                                    type="text"
-                                    placeholder="College"
-                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full rounded"
-                                    required
-                                    id="inst"
-                                />
-                            </div>
-                            <div class="mb-6">
-                                <input
                                     type="number"
                                     placeholder="Mobile Number (WhatsApp)"
                                     class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
                                     required
                                     id="mob"
                                 />
+                            </div>
+                            <div class="mb-6">
+                                <select
+                                    id="mode"
+                                    onchange="this.classList.add('text-white'); this.classList.remove('text-labelColor')"
+                                    class="bg-lbox text-labelColor rounded outline-none w-full py-2 px-3 appearance-none"
+                                    name="college"
+                                    required
+                                >
+                                    <option selected disabled value="invalid">
+                                        College
+                                    </option>
+                                    <option class="text-white" value="mdit">
+                                        Mdit
+                                    </option>
+                                    <option class="text-white" value="others">
+                                        Others
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <div class="hidden" id="t1">
+                                    <input
+                                        type="text"
+                                        placeholder="Collage Name"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t1n"
+                                        name="othercollege"
+                                    />
+                                </div>
                             </div>
                             <button
                                 class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
@@ -135,7 +150,7 @@
                 </div>
             </div>
             <div
-                class="absolute mb-6 left-1/2 bottom-0 transform -translate-x-1/2 md:left-auto md:transform-none md:right-0 md:bottom-0 md:mr-7"
+                class="absolute mb-6 left-1/2 bottom-0 transform -translate-x-1/2 lg:left-auto lg:transform-none lg:right-0 lg:bottom-0 md:mr-7"
             >
                 <h3 class="text-[#B7B7B7]">Made with ❤ by tecxeon</h3>
             </div>
@@ -150,16 +165,19 @@
                     let lname = $("#lname").val();
                     let branch = $("#branch").val();
                     let sem = $("#sem").val();
-                    let inst = $("#inst").val();
+                    let inst = $("#mode").val();
                     let mob = $("#mob").val();
 
+                    if (inst === "others") {
+                        inst = $("#t1n").val();
+                    }
                     // url
                     const url =
                         "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdSRwNrwRoGGi9j9LJ3cIj9-TbOyO_Nsr-UXpt4PxIzqQzO9Q/formResponse";
 
                     // post
                     let data = {
-                        "entry.428304624": fname,        
+                        "entry.428304624": fname,
                         "entry.339795661": lname,
                         "entry.33584300": branch,
                         "entry.159500214": sem,
@@ -173,11 +191,17 @@
                         contentType: "application/json",
                         dataType: "jsonp",
                         complete: function () {
+                            if (inst === "mdit") {
+                                alert("mdit");
+                            } else {
+                                alert("others");
+                            }
+
                             // Clear the input fields
                             $("form")[0].reset();
 
-                            // Redirect to google.com
-                            window.location.href = "https://tecxeon.github.io";
+                            // // Redirect to google.com
+                            // window.location.href = "https://tecxeon.github.io";
                         },
                     });
                 });
@@ -200,7 +224,54 @@
                     this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
                 });
             });
+
+            const form = document.querySelector("#form");
+            const submit = document.querySelector("#submit");
+            const gameType = document.querySelector("#mode");
+            const t1 = document.querySelector("#t1");
+            gameType.addEventListener("change", function (e) {
+                // Check if the game type field's value is valid
+
+                gameType.classList.remove("border-red-500", "border");
+
+                if (this.value === "mdit") {
+                    enable = [];
+                    disable = [t1];
+                } else {
+                    enable = [t1];
+                    disable = [];
+                }
+
+                enable.forEach((div) => {
+                    div.style.display = "grid";
+                    const inputs = div.querySelectorAll("input");
+                    // Listen for the invalid event
+                    inputs.forEach((input) => {
+                        input.required = true;
+                        input.addEventListener("invalid", function (event) {
+                            // Prevent the browser's default validation UI
+                            event.preventDefault();
+
+                            // Add a red border to the input field
+                            this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
+                        });
+
+                        // Listen for the input event to reset the border color when the user starts typing
+                        input.addEventListener("input", function (event) {
+                            this.classList.remove("border-red-500", "border");
+                        });
+                    });
+                });
+
+                disable.forEach((div) => {
+                    div.style.display = "none";
+                    const inputs = div.querySelectorAll("input");
+                    inputs.forEach((input) => {
+                        input.required = false;
+                        input.classList.remove("border-red-500", "border");
+                    });
+                });
+            });
         </script>
-        <!-- https://docs.google.com/spreadsheets/d/1EepDi3jAi8nbVPz5Wv_XbzfAtfjc6jzJDDIrsVJQsJE/edit?usp=sharing -->
     </body>
 </html>
