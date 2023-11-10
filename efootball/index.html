@@ -146,13 +146,22 @@
                                 </select>
                             </div>
                             <div class="mb-6">
-                                <input
-                                    type="text"
-                                    placeholder="Teammate Name"
-                                    class="hidden bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                    id="name2"
-                                    name="teammate"
-                                />
+                                <div class="hidden grid-cols-2 gap-5" id="t1">
+                                    <input
+                                        type="text"
+                                        placeholder="Teammate 1"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t1n"
+                                        name="team1name"
+                                    />
+                                    <input
+                                        type="number"
+                                        placeholder="Mobile Number"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t1m"
+                                        name="team1mob"
+                                    />
+                                </div>
                             </div>
                             <button
                                 class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
@@ -173,6 +182,8 @@
         <script>
             const form = document.querySelector("#form");
             const submit = document.querySelector("#submit");
+            const gameType = document.querySelector("#mode");
+            const t1 = document.querySelector("#t1");
 
             const scriptURL =
                 "https://script.google.com/macros/s/AKfycbwu8WZDZKOnMLxcPMY-CCRRb0NYiQMBe9Lk8ALiwnUu4vIrV5AqUrYU25IPmmrO_qZ3/exec";
@@ -183,8 +194,15 @@
                 let requestBody = new FormData(form);
                 fetch(scriptURL, { method: "POST", body: requestBody })
                     .then((response) => {
-                        // form.reset();
+                        if (gameType.value === "1 VS 1") {
+                            alert("1v1");
+                        } else if (gameType.value === "2 VS 2") {
+                            alert("2v2");
+                        } else {
+                            alert("Both");
+                        }
                         // window.location.href = "https://tecxeon.github.io";
+                        form.reset();
                         submit.disabled = false;
                     })
                     .catch((error) => {
@@ -211,42 +229,56 @@
                 });
             });
 
-            const gameType = document.querySelector("#mode");
-            const teammateInput = document.querySelector("#name2");
-
             submit.addEventListener("click", function (e) {
                 // Check if the game type field's value is valid
                 if (gameType.value === "invalid") {
                     gameType.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
                 }
             });
+
             gameType.addEventListener("change", function (e) {
                 // Check if the game type field's value is valid
 
                 gameType.classList.remove("border-red-500", "border");
-                if (this.value === "2 VS 2" || this.value === "Both") {
-                    // If it is, make the teammate input box visible
-                    teammateInput.style.display = "block";
-                    teammateInput.required = true;
-                    teammateInput.addEventListener("invalid", function (event) {
-                        // Prevent the browser's default validation UI
-                        event.preventDefault();
 
-                        // Add a red border to the input field
-                        this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
-                    });
-
-                    // Listen for the input event to reset the border color when the user starts typing
-                    teammateInput.addEventListener("input", function (event) {
-                        this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
-                    });
+                if (this.value === "1 VS 1") {
+                    enable = [];
+                    disable = [t1];
                 } else {
-                    // If it's not, hide the teammate input box and make it not required
-                    teammateInput.style.display = "none";
-                    teammateInput.required = false;
+                    enable = [t1];
+                    disable = [];
                 }
+
+                enable.forEach((div) => {
+                    div.style.display = "grid";
+                    const inputs = div.querySelectorAll("input");
+                    // Listen for the invalid event
+                    inputs.forEach((input) => {
+                        input.required = true;
+                        input.addEventListener("invalid", function (event) {
+                            // Prevent the browser's default validation UI
+                            event.preventDefault();
+
+                            // Add a red border to the input field
+                            this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
+                        });
+
+                        // Listen for the input event to reset the border color when the user starts typing
+                        input.addEventListener("input", function (event) {
+                            this.classList.remove("border-red-500", "border");
+                        });
+                    });
+                });
+
+                disable.forEach((div) => {
+                    div.style.display = "none";
+                    const inputs = div.querySelectorAll("input");
+                    inputs.forEach((input) => {
+                        input.required = false;
+                        input.classList.remove("border-red-500", "border");
+                    });
+                });
             });
         </script>
-        <!-- https://docs.google.com/spreadsheets/d/1xv9qvKfg-4qKd6lhSBOI7exhTqF5KxL6qcWZl3jd8Og/edit?usp=sharing -->
     </body>
 </html>
