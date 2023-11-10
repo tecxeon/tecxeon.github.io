@@ -92,7 +92,7 @@
                                         id="branch"
                                     />
                                     <input
-                                        type="number"
+                                        type="text"
                                         placeholder="Semester"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
                                         required
@@ -192,16 +192,15 @@
                         dataType: "jsonp",
                         complete: function () {
                             if (inst === "mdit") {
-                                alert("mdit");
+                                window.location.href =
+                                    "thankyou/thankyou-mditdjkds34nd";
                             } else {
-                                alert("others");
+                                window.location.href =
+                                    "thankyou/thankyou-100ssdf93nd";
                             }
 
                             // Clear the input fields
                             $("form")[0].reset();
-
-                            // // Redirect to google.com
-                            // window.location.href = "https://tecxeon.github.io";
                         },
                     });
                 });
