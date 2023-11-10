@@ -597,10 +597,6 @@ video {
   display: flex;
 }
 
-.grid {
-  display: grid;
-}
-
 .h-52 {
   height: 13rem;
 }
@@ -655,15 +651,6 @@ video {
 
 .rounded-2xl {
   border-radius: 1rem;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .bg-\[\#252B3A\] {
@@ -812,8 +799,12 @@ video {
     margin-bottom: 1.625rem;
   }
 
-  .lg\:w-11\/12 {
-    width: 91.666667%;
+  .lg\:w-8\/12 {
+    width: 66.666667%;
+  }
+
+  .lg\:w-7\/12 {
+    width: 58.333333%;
   }
 
   .lg\:flex-row {
