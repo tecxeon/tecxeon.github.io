@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Register Now</title>
+        <title>E-Football</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -195,11 +195,14 @@
                 fetch(scriptURL, { method: "POST", body: requestBody })
                     .then((response) => {
                         if (gameType.value === "1 VS 1") {
-                         window.location.href = "thankyou/thankyou-30rsd84ge4"
+                            window.location.href =
+                                "thankyou/thankyou-30rsd84ge4";
                         } else if (gameType.value === "2 VS 2") {
-                         window.location.href = "thankyou/thankyou-40rf42fg4b"
+                            window.location.href =
+                                "thankyou/thankyou-40rf42fg4b";
                         } else {
-                         window.location.href = "thankyou/thankyou-70r6hyy4rtgj"
+                            window.location.href =
+                                "thankyou/thankyou-70r6hyy4rtgj";
                         }
                         // window.location.href = "https://tecxeon.github.io";
                         form.reset();

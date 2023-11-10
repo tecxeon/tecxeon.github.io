@@ -568,10 +568,6 @@ video {
   }
 }
 
-.visible {
-  visibility: visible;
-}
-
 .absolute {
   position: absolute;
 }
@@ -607,10 +603,6 @@ video {
 
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-
-.block {
-  display: block;
 }
 
 .flex {
