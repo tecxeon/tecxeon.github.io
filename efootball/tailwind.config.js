@@ -22,4 +22,3 @@ module.exports = {
     },
     plugins: [],
 };
-("https://media.contentapi.ea.com/content/dam/gin/images/2019/06/fifa20-gin-keyart.jpg.adapt.crop1x1.767p.jpg");
