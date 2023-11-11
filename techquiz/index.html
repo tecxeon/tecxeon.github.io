@@ -128,6 +128,7 @@
                                         placeholder="Teammate 1"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
                                         id="name2"
+                                        name="team1name"
                                         required
                                     />
                                     <input
@@ -135,6 +136,7 @@
                                         placeholder="Mobile Number"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
                                         id="name3"
+                                        name="team1mob"
                                         required
                                     />
                                 </div>
@@ -162,7 +164,7 @@
             const submit = document.querySelector("#submit");
 
             const scriptURL =
-                "https://script.google.com/macros/s/AKfycbwW8PMSLnRtkgr2zdvhmJBFY1p_xZw3beEMtSsHJOJPue7Q-GVCitBxBBr1PESJQG3cDg/exec";
+                "https://script.google.com/macros/s/AKfycbyGwdbn5Q7_K0fa64vlXAxuGH4ab0kRV7y3RWAGZJWVTTWf2NKoJiquKYshWougW1W8IQ/exec";
 
             form.addEventListener("submit", (e) => {
                 submit.disabled = true;
