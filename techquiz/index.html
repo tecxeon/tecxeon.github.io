@@ -32,9 +32,7 @@
     </head>
     <body
         class="bg-no-repeat bg-cover bg-center"
-        style="
-            background-image: url('back.jpg');
-        "
+        style="background-image: url('back.jpg')"
     >
         <div
             id="banner"
@@ -54,16 +52,15 @@
                 >
                     <div
                         class="hidden w-full lg:w-1/2 lg:flex flex-col items-center justify-center py-16 bg-no-repeat bg-cover bg-center"
-                        style="
-                            background-image: url('Tech\ Quiz.jpg');
-                        "
+                        style="background-image: url('Tech\ Quiz.jpg')"
                     ></div>
                     <div class="bg-boxColor w-full lg:w-1/2 lg:py-6 py-9 px-6">
                         <h2
                             class="text-white text-3xl mb-8 text-center font-bold leading-10"
                         >
-                            Tech Quiz 
-                        </h2>   <form id="form">
+                            Tech Quiz
+                        </h2>
+                        <form id="form">
                             <div class="mb-6">
                                 <div class="grid grid-cols-2 gap-5">
                                     <input
@@ -144,11 +141,11 @@
                             </div>
 
                             <button
-                            class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
-                            id="submit"
-                        >
-                            Register Now
-                        </button>
+                                class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
+                                id="submit"
+                            >
+                                Register Now
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -159,13 +156,13 @@
                 <h3 class="text-[#B7B7B7]">Made with ❤ by tecxeon</h3>
             </div>
         </div>
-                     
+
         <script>
             const form = document.querySelector("#form");
             const submit = document.querySelector("#submit");
 
             const scriptURL =
-                "https://script.google.com/macros/s/AKfycbzYl-ZJlX_OJ7bw29b4XzlVzdBj7Zw6q3sCemovx9LUYANSzE0UKSRPbske-WiXzs20yg/exec";
+                "https://script.google.com/macros/s/AKfycbwW8PMSLnRtkgr2zdvhmJBFY1p_xZw3beEMtSsHJOJPue7Q-GVCitBxBBr1PESJQG3cDg/exec";
 
             form.addEventListener("submit", (e) => {
                 submit.disabled = true;
@@ -200,69 +197,6 @@
                     this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
                 });
             });
-
-            const gameType = document.querySelector("#mode");
-            const t1 = document.querySelector("#t1");
-            const t2 = document.querySelector("#t2");
-            const t3 = document.querySelector("#t3");
-
-            submit.addEventListener("click", function (e) {
-                // Check if the game type field's value is valid
-                if (gameType.value === "invalid") {
-                    gameType.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
-                }
-            });
-
-            gameType.addEventListener("change", function (e) {
-                // Check if the game type field's value is valid
-
-                gameType.classList.remove("border-red-500", "border");
-
-                if (this.value === "2") {
-                    enable = [t1];
-                    disable = [t2, t3];
-                } else if (this.value === "3") {
-                    enable = [t1, t2];
-                    disable = [t3];
-                } else if (this.value === "4") {
-                    enable = [t1, t2, t3];
-                    disable = [];
-                } else {
-                    enable = [];
-                    disable = [t1, t2, t3];
-                }
-
-                enable.forEach((div) => {
-                    div.style.display = "grid";
-                    const inputs = div.querySelectorAll("input");
-                    // Listen for the invalid event
-                    inputs.forEach((input) => {
-                        input.required = true;
-                        input.addEventListener("invalid", function (event) {
-                            // Prevent the browser's default validation UI
-                            event.preventDefault();
-
-                            // Add a red border to the input field
-                            this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
-                        });
-
-                        // Listen for the input event to reset the border color when the user starts typing
-                        input.addEventListener("input", function (event) {
-                            this.classList.remove("border-red-500", "border");
-                        });
-                    });
-                });
-
-                disable.forEach((div) => {
-                    div.style.display = "none";
-                    const inputs = div.querySelectorAll("input");
-                    inputs.forEach((input) => {
-                        input.required = false;
-                        input.classList.remove("border-red-500", "border");
-                    });
-                });
-            });
         </script>
-        <!-- https://docs.google.com/spreadsheets/d/1xv9qvKfg-4qKd6lhSBOI7exhTqF5KxL6qcWZl3jd8Og/edit?usp=sharing -->
     </body>
 </html>
