@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thank you</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            /* Hide the up and down arrows on number inputs */
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+            input,
+            textarea,
+            button,
+            select,
+            a {
+                -webkit-tap-highlight-color: transparent;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-no-repeat bg-cover bg-center"
+        style="background-image: url('../f.jpg')"
+    >
+        <div
+            id="banner"
+            tabindex="-1"
+            class="flex z-50 gap-8 justify-between py-6 w-full backdrop-blur-xl"
+            style="background-color: rgba(0, 0, 0, 0.354)"
+        >
+            <div
+                class="bg-no-repeat bg-center bg-contain py-6 mx-auto w-full z-10"
+                style="background-image: url('../tecxeonW.png')"
+            ></div>
+        </div>
+        <div class="relative min-h-screen py-14 backdrop-blur-sm">
+            <div class="container mx-auto relative">
+                <div
+                    class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 rounded-2xl shadow-custom mx-auto overflow-hidden"
+                >
+                    <div class="bg-boxColor w-full py-7 px-7 lg:px-6">
+                        <div class="mb-5 lg:mb-[1.625rem]">
+                            <h2
+                                class="text-white text-4xl text-center font-bold pb-3"
+                            >
+                                Thank You For Registering
+                            </h2>
+                            <div class="text-xs text-[#97969C] text-center">
+                                to complete your registration complete the
+                                following
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-col lg:flex-row mx-auto overflow-hidden gap-5"
+                        >
+                            <div
+                                class="bg-[#252B3A] w-full p-5 rounded-2xl flex flex-col justify-center items-center"
+                            >
+                                <div
+                                    class="text-2xl text-white font-bold mb-5 text-center relative"
+                                >
+                                    Payment
+                                </div>
+                                <div
+                                    class="text-sm text-[#97969C] mb-5 text-center"
+                                >
+                                    Send the registration fee of ₹200 to this
+                                    UPI ID
+                                    <br />
+                                    <div class="text-white">
+                                        sansuvarghese76@okhdfcbank
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-col md:flex-row rounded-2xl mx-auto overflow-hidden mb-3"
+                                >
+                                    <img
+                                        src="qr.png"
+                                        alt="qrcode"
+                                        class="w-52 h-52 rounded-2xl mx-auto overflow-hidden"
+                                    />
+                                </div>
+                            </div>
+                            <!-- 2nd box-->
+                            <div
+                                class="bg-[#252B3A] w-full p-5 rounded-2xl flex flex-col justify-center items-center"
+                            >
+                                <div
+                                    class="text-2xl text-white font-bold mb-5 text-center"
+                                >
+                                    Send Payment Screenshot
+                                </div>
+                                <div
+                                    class="text-sm text-[#97969C] mb-5 text-center"
+                                >
+                                    to this number
+                                    <br />
+                                    <div class="text-white text-lg">
+                                        +91 9207372239
+                                    </div>
+                                </div>
+                                <a
+                                    class="w-full bg-[#3F8961] py-4 text-center text-white active:bg-white active:text-black rounded"
+                                    id="submit"
+                                    href="https://api.whatsapp.com/send?phone=9207372239"
+                                >
+                                    Chat Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
