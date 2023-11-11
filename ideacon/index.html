@@ -125,16 +125,16 @@
                                 <div class="grid grid-cols-2 gap-5">
                                     <input
                                         type="text"
-                                        placeholder="Teammate 1 Name"
+                                        placeholder="Teammate 1"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                        id="name2"
+                                        name="teammate1"
                                         required
                                     />
                                     <input
-                                        type="text"
+                                        type="number"
                                         placeholder="Mobile Number"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                        id="name3"
+                                        name="teammate1mob"
                                         required
                                     />
                                 </div>
@@ -143,16 +143,16 @@
                                 <div class="grid grid-cols-2 gap-5">
                                     <input
                                         type="text"
-                                        placeholder="Teammate 2 Name"
+                                        placeholder="Teammate 2"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                        id="name2"
+                                        name="teammate2"
                                         required
                                     />
                                     <input
-                                        type="text"
+                                        type="number"
                                         placeholder="Mobile Number"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                        id="name3"
+                                        name="teammate2mob"
                                         required
                                     />
                                 </div>
@@ -161,16 +161,16 @@
                                 <div class="grid grid-cols-2 gap-5">
                                     <input
                                         type="text"
-                                        placeholder="Teammate 3 Name"
+                                        placeholder="Teammate 3"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                        id="name2"
+                                        name="teammate3"
                                         required
                                     />
                                     <input
-                                        type="text"
+                                        type="number"
                                         placeholder="Mobile Number"
                                         class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
-                                        id="name3"
+                                        name="teammate3mob"
                                         required
                                     />
                                 </div>
@@ -193,11 +193,13 @@
             </div>
         </div>
         <script>
+            // ******************  IMPORTANT  ******************
+
             const form = document.querySelector("#form");
             const submit = document.querySelector("#submit");
 
             const scriptURL =
-                "https://script.google.com/macros/wfes/AKfycbzYl-ZJlX_OJ7bw29b4XzlVzdBj7Zw6q3sCemovx9LUYANSzE0UKSRPbske-WiXzs20yg/exec";
+                "https://script.google.com/macros/s/AKfycbyXPBFArEkffZFLagFlz8y6d_Q1Z9DMW4G5pS7WlpJz8LVVT8wrQr0PDJLZGVeqcRL8/exec";
 
             form.addEventListener("submit", (e) => {
                 submit.disabled = true;
@@ -214,6 +216,27 @@
                         submit.disabled = false;
                     });
             });
+
+            // Select all required input elements
+            const inputs = document.querySelectorAll("input[required]");
+
+            inputs.forEach((input) => {
+                // Listen for the invalid event
+                input.addEventListener("invalid", function (event) {
+                    // Prevent the browser's default validation UI
+                    event.preventDefault();
+
+                    // Add a red border to the input field
+                    this.classList.add("border-red-500", "border-2"); // Add your Tailwind CSS classes here
+                });
+
+                // Listen for the input event to reset the border color when the user starts typing
+                input.addEventListener("input", function (event) {
+                    this.classList.remove("border-red-500", "border-2"); // Remove the specific CSS classes
+                });
+            });
+
+            // ******************  IMPORTANT  ******************
         </script>
     </body>
 </html>

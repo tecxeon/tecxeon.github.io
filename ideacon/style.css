@@ -684,8 +684,21 @@ video {
   border-radius: 1rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .bg-boxColor {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .bg-button {
@@ -781,11 +794,13 @@ video {
 }
 
 .placeholder-labelColor::-moz-placeholder {
-  color: rgba(187, 187, 191, 0.4);
+  --tw-placeholder-opacity: 1;
+  color: rgba(187, 187, 191, var(--tw-placeholder-opacity));
 }
 
 .placeholder-labelColor::placeholder {
-  color: rgba(187, 187, 191, 0.4);
+  --tw-placeholder-opacity: 1;
+  color: rgba(187, 187, 191, var(--tw-placeholder-opacity));
 }
 
 .shadow-custom {

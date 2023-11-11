@@ -4,9 +4,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                boxColor: "rgba(0, 0, 0, 0.5)",
+                boxColor: "rgba(0, 0, 0, 0.6)",
                 button: "rgba(255, 193, 9)",
-                labelColor: "rgba(187, 187, 191, 0.4)",
+                labelColor: "rgba(187, 187, 191)",
                 lbox: "rgba(255, 255, 255, 0.3)",
             },
             fontFamily: {
