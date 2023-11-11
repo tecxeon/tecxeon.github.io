@@ -32,9 +32,7 @@
     </head>
     <body
         class="bg-no-repeat bg-cover bg-center"
-        style="
-            background-image: url('b.jpg');
-        "
+        style="background-image: url('b.jpg')"
     >
         <div
             id="banner"
@@ -47,22 +45,20 @@
                 style="background-image: url(tecxeonW.png)"
             ></div>
         </div>
-        <div class="relative min-h-screen py-40 backdrop-blur-sm">
+        <div class="relative min-h-screen py-32 backdrop-blur-sm">
             <div class="container mx-auto relative">
                 <div
                     class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 rounded-2xl shadow-custom mx-auto overflow-hidden"
                 >
                     <div
-                        class="w-full lg:w-1/2 lg:flex flex-col items-center justify-center py-16 bg-no-repeat bg-cover bg-center"
-                        style="
-                            background-image: url('side.jpg');
-                        "
+                        class="w-full lg:w-1/2 lg:flex flex-col items-center justify-center bg-no-repeat bg-cover bg-center"
+                        style="background-image: url('side.jpg')"
                     ></div>
                     <div class="bg-boxColor w-full lg:w-1/2 lg:py-6 py-9 px-6">
                         <h2
                             class="text-white text-3xl mb-10 text-center font-bold leading-10"
                         >
-                        UI Design Hackathon
+                            UI Design Hackathon
                         </h2>
                         <form id="form">
                             <div class="mb-6">
@@ -136,7 +132,7 @@
                                     <option selected disabled value="invalid">
                                         Team Size
                                     </option>
-                                    <option class="text-white" value="1">   
+                                    <option class="text-white" value="1">
                                         1 Member
                                     </option>
                                     <option class="text-white" value="2">
@@ -145,8 +141,7 @@
                                     <option class="text-white" value="3">
                                         3 Member
                                     </option>
-
-                                    </select>
+                                </select>
                             </div>
                             <div class="mb-6">
                                 <div class="hidden grid-cols-2 gap-5" id="t1">
@@ -184,24 +179,6 @@
                                     />
                                 </div>
                             </div>
-                            <div class="mb-6">
-                                <div class="hidden grid-cols-2 gap-5" id="t3">
-                                    <input
-                                        type="text"
-                                        placeholder="Teammate 3"
-                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
-                                        id="t3n"
-                                        name="team3name"
-                                    />
-                                    <input
-                                        type="number"
-                                        placeholder="Mobile Number"
-                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
-                                        id="t3m"
-                                        name="team3mob"
-                                    />
-                                </div>
-                            </div>
 
                             <button
                                 class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
@@ -223,7 +200,8 @@
             const form = document.querySelector("#form");
             const submit = document.querySelector("#submit");
 
-            const scriptURL ="https://script.google.com/macros/s/AKfycbwsiekOb89rkofGXTKC11c-uFPre3sG_-71PI9XWrEXkY0BmrK2UChwBBWOOirA1B7B/exec";
+            const scriptURL =
+                "https://script.google.com/macros/library/d/1vbDzuMonI4-Bed6Ut60u8lWE4hDUoiBS4i9navfNWsJqaJcD1r-oE0YV/2";
 
             form.addEventListener("submit", (e) => {
                 submit.disabled = true;
@@ -263,7 +241,6 @@
             const teammateInput = document.querySelector("#name2");
             const t1 = document.querySelector("#t1");
             const t2 = document.querySelector("#t2");
-            const t3 = document.querySelector("#t3");
 
             submit.addEventListener("click", function (e) {
                 // Check if the game type field's value is valid
@@ -279,16 +256,13 @@
 
                 if (this.value === "2") {
                     enable = [t1];
-                    disable = [t2, t3];
+                    disable = [t2];
                 } else if (this.value === "3") {
                     enable = [t1, t2];
-                    disable = [t3];
-                } else if (this.value === "4") {
-                    enable = [t1, t2, t3];
                     disable = [];
                 } else {
                     enable = [];
-                    disable = [t1, t2, t3];
+                    disable = [t1, t2];
                 }
 
                 enable.forEach((div) => {
@@ -322,6 +296,5 @@
                 });
             });
         </script>
-        <!-- https://docs.google.com/spreadsheets/d/1A8yJfyBvpvLt0rarr-F_kz49q8fzjcK7MQ8MhEOWpr8/edit?usp=sharing -->
     </body>
 </html>

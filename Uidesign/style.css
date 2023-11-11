@@ -734,19 +734,14 @@ video {
   padding-right: 1.5rem;
 }
 
-.py-16 {
-  padding-top: 15rem;
-  padding-bottom: 4rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.py-40 {
-  padding-top: 2rem;
-  padding-bottom: 10rem;
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .py-5 {
