@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register Now</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* Hide the up and down arrows on number inputs */
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+            input,
+            textarea,
+            button,
+            select,
+            a {
+                -webkit-tap-highlight-color: transparent;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-no-repeat bg-cover bg-center"
+        style="background-image: url('b.jpg')"
+    >
+        <div
+            id="banner"
+            tabindex="-1"
+            class="flex z-50 gap-8 justify-between py-6 w-full backdrop-blur-xl"
+            style="background-color: rgba(0, 0, 0, 0.354)"
+        >
+            <div
+                class="bg-no-repeat bg-center bg-contain py-6 mx-auto w-full z-10"
+                style="background-image: url(tecxeonW.png)"
+            ></div>
+        </div>
+        <div class="relative min-h-screen py-32 backdrop-blur-sm">
+            <div class="container mx-auto relative">
+                <div
+                    class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 rounded-2xl shadow-custom mx-auto overflow-hidden"
+                >
+                    <div
+                        class="w-full lg:w-1/2 lg:flex flex-col items-center justify-center bg-no-repeat bg-cover bg-center"
+                        style="background-image: url('side.jpg')"
+                    ></div>
+                    <div class="bg-boxColor w-full lg:w-1/2 lg:py-6 py-9 px-6">
+                        <h2
+                            class="text-white text-3xl mb-10 text-center font-bold leading-10"
+                        >
+                            UI Design Hackathon
+                        </h2>
+                        <form id="form">
+                            <div class="mb-6">
+                                <div class="grid grid-cols-2 gap-5">
+                                    <input
+                                        type="text"
+                                        placeholder="First Name"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        required
+                                        id="fname"
+                                        name="fname"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Last Name"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        required
+                                        id="lname"
+                                        name="lname"
+                                    />
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <div class="grid grid-cols-2 gap-5">
+                                    <input
+                                        type="text"
+                                        placeholder="Branch"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        required
+                                        id="branch"
+                                        name="branch"
+                                    />
+                                    <input
+                                        type="number"
+                                        placeholder="Semester"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        required
+                                        id="sem"
+                                        name="semester"
+                                    />
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <input
+                                    type="text"
+                                    placeholder="College"
+                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full rounded"
+                                    required
+                                    id="inst"
+                                    name="college"
+                                />
+                            </div>
+                            <div class="mb-6">
+                                <input
+                                    type="number"
+                                    placeholder="Mobile Number (WhatsApp)"
+                                    class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 w-full appearance-none rounded"
+                                    required
+                                    id="mob"
+                                    name="mob"
+                                />
+                            </div>
+                            <div class="mb-6">
+                                <select
+                                    id="mode"
+                                    onchange="this.classList.add('text-white'); this.classList.remove('text-labelColor')"
+                                    class="bg-lbox text-labelColor rounded outline-none w-full py-2 px-3 appearance-none"
+                                    name="squadsize"
+                                    required
+                                >
+                                    <option selected disabled value="invalid">
+                                        Team Size
+                                    </option>
+                                    <option class="text-white" value="1">
+                                        1 Member
+                                    </option>
+                                    <option class="text-white" value="2">
+                                        2 Member
+                                    </option>
+                                    <option class="text-white" value="3">
+                                        3 Member
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <div class="hidden grid-cols-2 gap-5" id="t1">
+                                    <input
+                                        type="text"
+                                        placeholder="Teammate 1"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t1n"
+                                        name="team1name"
+                                    />
+                                    <input
+                                        type="number"
+                                        placeholder="Mobile Number"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t1m"
+                                        name="team1mob"
+                                    />
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <div class="hidden grid-cols-2 gap-5" id="t2">
+                                    <input
+                                        type="text"
+                                        placeholder="Teammate 2"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t2n"
+                                        name="team2name"
+                                    />
+                                    <input
+                                        type="number"
+                                        placeholder="Mobile Number"
+                                        class="bg-lbox outline-none placeholder-labelColor text-white py-2 px-3 rounded"
+                                        id="t2m"
+                                        name="team2mob"
+                                    />
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full bg-button py-5 text-center text-white active:bg-white active:text-black rounded"
+                                id="submit"
+                            >
+                                Register Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="absolute mb-6 left-1/2 bottom-0 transform -translate-x-1/2 md:left-auto md:transform-none md:right-0 md:bottom-0 md:mr-7"
+            >
+                <h3 class="text-[#B7B7B7]">Made with ❤ by tecxeon</h3>
+            </div>
+        </div>
+        <script>
+            const form = document.querySelector("#form");
+            const submit = document.querySelector("#submit");
+
+            const scriptURL =
+                "https://script.google.com/macros/s/AKfycbwsiekOb89rkofGXTKC11c-uFPre3sG_-71PI9XWrEXkY0BmrK2UChwBBWOOirA1B7B/exec";
+
+            form.addEventListener("submit", (e) => {
+                submit.disabled = true;
+                e.preventDefault();
+                let requestBody = new FormData(form);
+                fetch(scriptURL, { method: "POST", body: requestBody })
+                    .then((response) => {
+                        form.reset();
+                        window.location.href = "thankyou-150dfskfh34dj/";
+                        submit.disabled = false;
+                    })
+                    .catch((error) => {
+                        alert("Error!", error.message);
+                        submit.disabled = false;
+                    });
+            });
+
+            // Select all required input elements
+            let inputFields = document.querySelectorAll("input[required]");
+            inputFields.forEach((input) => {
+                // Listen for the invalid event
+                input.addEventListener("invalid", function (event) {
+                    // Prevent the browser's default validation UI
+                    event.preventDefault();
+
+                    // Add a red border to the input field
+                    this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
+                });
+
+                // Listen for the input event to reset the border color when the user starts typing
+                input.addEventListener("input", function (event) {
+                    this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
+                });
+            });
+
+            const gameType = document.querySelector("#mode");
+            const teammateInput = document.querySelector("#name2");
+            const t1 = document.querySelector("#t1");
+            const t2 = document.querySelector("#t2");
+
+            submit.addEventListener("click", function (e) {
+                // Check if the game type field's value is valid
+                if (gameType.value === "invalid") {
+                    gameType.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
+                }
+            });
+
+            gameType.addEventListener("change", function (e) {
+                // Check if the game type field's value is valid
+
+                gameType.classList.remove("border-red-500", "border");
+
+                if (this.value === "2") {
+                    enable = [t1];
+                    disable = [t2];
+                } else if (this.value === "3") {
+                    enable = [t1, t2];
+                    disable = [];
+                } else {
+                    enable = [];
+                    disable = [t1, t2];
+                }
+
+                enable.forEach((div) => {
+                    div.style.display = "grid";
+                    const inputs = div.querySelectorAll("input");
+                    // Listen for the invalid event
+                    inputs.forEach((input) => {
+                        input.required = true;
+                        input.addEventListener("invalid", function (event) {
+                            // Prevent the browser's default validation UI
+                            event.preventDefault();
+
+                            // Add a red border to the input field
+                            this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
+                        });
+
+                        // Listen for the input event to reset the border color when the user starts typing
+                        input.addEventListener("input", function (event) {
+                            this.classList.remove("border-red-500", "border");
+                        });
+                    });
+                });
+
+                disable.forEach((div) => {
+                    div.style.display = "none";
+                    const inputs = div.querySelectorAll("input");
+                    inputs.forEach((input) => {
+                        input.required = false;
+                        input.classList.remove("border-red-500", "border");
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
