@@ -3,37 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title></title>
+        <title>Thank you</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400&display=swap"
             rel="stylesheet"
         />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            boxColor: "#15181F",
-                            button: "#D84E00",
-                            labelColor: "rgba(187, 187, 191, 0.4)",
-                            lbox: "#2f3138",
-                        },
-                        fontFamily: {
-                            sans: ["Outfit", "sans-serif"],
-                        },
-                        boxShadow: {
-                            custom: "0 10px 30px rgba(0, 0, 0, 0.5)",
-                        },
-                        lineHeight: {
-                            10: "2.5rem",
-                        },
-                    },
-                },
-            };
-        </script>
+        <link rel="stylesheet" href="style.css" />
         <style>
             /* Hide the up and down arrows on number inputs */
             input[type="number"]::-webkit-inner-spin-button,
@@ -55,9 +32,7 @@
     </head>
     <body
         class="bg-no-repeat bg-cover bg-center"
-        style="
-            background-image: url('sid');
-        "
+        style="background-image: url('../../side.jpg')"
     >
         <div
             id="banner"
@@ -67,13 +42,13 @@
         >
             <div
                 class="bg-no-repeat bg-center bg-contain py-6 mx-auto w-full z-10"
-                style="background-image: url(tecxeonW.png)"
+                style="background-image: url('../../tecxeonW.png')"
             ></div>
         </div>
         <div class="relative min-h-screen py-14 backdrop-blur-sm">
             <div class="container mx-auto relative">
                 <div
-                    class="flex flex-col lg:flex-row w-10/12 lg:w-11/12 rounded-2xl shadow-custom mx-auto overflow-hidden"
+                    class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 rounded-2xl shadow-custom mx-auto overflow-hidden"
                 >
                     <div class="bg-boxColor w-full py-7 px-7 lg:px-6">
                         <div class="mb-5 lg:mb-[1.625rem]">
@@ -102,20 +77,28 @@
                                 <div
                                     class="text-sm text-[#97969C] mb-5 text-center"
                                 >
-                                    Send the registration fee to this up ID
+                                    Send the registration fee of ₹100 to this
+                                    UPI ID
                                     <br />
-                                    <div class="text-white">
-                                        sanushaak2002@okhdfcbank
-                                    </div>
+                                    <a
+                                        class="text-white"
+                                        href="upi://pay?pa=aswajcheruvath@okhdfcbank&pn=aswaj%20c&am=100.00&cu=INR&aid=uGICAgMC0saG_BQ"
+                                    >
+                                        aswajcheruvath@okhdfcbank
+                                    </a>
                                 </div>
                                 <div
                                     class="flex flex-col md:flex-row rounded-2xl mx-auto overflow-hidden mb-3"
                                 >
-                                    <img
-                                        src="qr.jpg"
-                                        alt="qrcode"
-                                        class="w-52 h-52 rounded-2xl mx-auto overflow-hidden"
-                                    />
+                                    <a
+                                        href="upi://pay?pa=aswajcheruvath@okhdfcbank&pn=aswaj%20c&am=100.00&cu=INR&aid=uGICAgMC0saG_BQ"
+                                    >
+                                        <img
+                                            src="qr.jpg"
+                                            alt="qrcode"
+                                            class="w-52 h-52 rounded-2xl mx-auto overflow-hidden"
+                                        />
+                                    </a>
                                 </div>
                             </div>
                             <!-- 2nd box-->
@@ -133,14 +116,16 @@
                                     to this number
                                     <br />
                                     <div class="text-white text-lg">
-                                        +91 92074 34368
+                                        +91 9400198306
                                     </div>
                                 </div>
-                                <button
+                                <a
                                     class="w-full bg-[#3F8961] py-4 text-center text-white active:bg-white active:text-black rounded"
                                     id="submit"
+                                    href="https://api.whatsapp.com/send?phone=919400198306"
                                 >
-                               <a href="https://api.whatsapp.com/send?phone=919207434368">Chat Now</a>
+                                    Chat Now
+                                </a>
                             </div>
                         </div>
                     </div>
