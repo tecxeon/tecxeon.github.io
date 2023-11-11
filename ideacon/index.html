@@ -227,12 +227,12 @@
                     event.preventDefault();
 
                     // Add a red border to the input field
-                    this.classList.add("border-red-500", "border-2"); // Add your Tailwind CSS classes here
+                    this.classList.add("border-red-500", "border"); // Add your Tailwind CSS classes here
                 });
 
                 // Listen for the input event to reset the border color when the user starts typing
                 input.addEventListener("input", function (event) {
-                    this.classList.remove("border-red-500", "border-2"); // Remove the specific CSS classes
+                    this.classList.remove("border-red-500", "border"); // Remove the specific CSS classes
                 });
             });
 
