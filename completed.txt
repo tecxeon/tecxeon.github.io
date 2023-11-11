@@ -5,3 +5,4 @@ maninv
 uihackathon
 ideacon
 techquiz
+debug
