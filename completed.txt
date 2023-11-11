@@ -6,3 +6,5 @@ uihackathon
 ideacon
 techquiz
 debug
+typerace
+keyboardassembly
