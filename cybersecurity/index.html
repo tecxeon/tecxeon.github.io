@@ -167,42 +167,50 @@
                     let sem = $("#sem").val();
                     let inst = $("#mode").val();
                     let mob = $("#mob").val();
+                    let flag = false;
 
                     if (inst === "others") {
                         inst = $("#t1n").val();
+                        flag = true;
                     }
-                    // url
-                    const url =
-                        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdSRwNrwRoGGi9j9LJ3cIj9-TbOyO_Nsr-UXpt4PxIzqQzO9Q/formResponse";
+                    if (flag) {
+                        // url
+                        const url =
+                            "https://docs.google.com/forms/u/1/d/e/1FAIpQLSdSRwNrwRoGGi9j9LJ3cIj9-TbOyO_Nsr-UXpt4PxIzqQzO9Q/formResponse";
 
-                    // post
-                    let data = {
-                        "entry.428304624": fname,
-                        "entry.339795661": lname,
-                        "entry.33584300": branch,
-                        "entry.159500214": sem,
-                        "entry.2008588683": inst,
-                        "entry.721650319": mob,
-                    };
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: data,
-                        contentType: "application/json",
-                        dataType: "jsonp",
-                        complete: function () {
-                            if (inst === "mdit") {
-                                window.location.href =
-                                    "thankyou/thankyou-regclosr233f3wa";
-                            } else {
-                                window.location.href =
-                                    "thankyou/thankyou-100ssdf93nd";
-                            }
+                        // post
+                        let data = {
+                            "entry.428304624": fname,
+                            "entry.339795661": lname,
+                            "entry.33584300": branch,
+                            "entry.159500214": sem,
+                            "entry.2008588683": inst,
+                            "entry.721650319": mob,
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: data,
+                            contentType: "application/json",
+                            dataType: "jsonp",
+                            complete: function () {
+                                if (inst === "mdit") {
+                                    window.location.href =
+                                        "thankyou/thankyou-mditdjkds34nd";
+                                } else {
+                                    window.location.href =
+                                        "thankyou/thankyou-100ssdf93nd";
+                                }
 
-                            // Clear the input fields
-                            $("form")[0].reset();
-                        },
-                    });
+                                // Clear the input fields
+                                $("form")[0].reset();
+                            },
+                        });
+                    } else {
+                        $("form")[0].reset();
+                        window.location.href =
+                            "thankyou/thankyou-regclosr233f3wa";
+                    }
                 });
             });
             // Select all required input elements
