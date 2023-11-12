@@ -32,9 +32,7 @@
     </head>
     <body
         class="bg-no-repeat bg-cover bg-center"
-        style="
-            background-image: url('https://wstatic-prod.pubg.com/web/live/main_043cac5/img/aeca002.jpg');
-        "
+        style="background-image: url('bg.jpg')"
     >
         <div
             id="banner"
@@ -54,15 +52,13 @@
                 >
                     <div
                         class="hidden w-full lg:w-1/2 lg:flex flex-col items-center justify-center py-16 bg-no-repeat bg-cover bg-center"
-                        style="
-                            background-image: url('https://wstatic-prod.pubg.com/web/live/main_043cac5/img/aeca002.jpg');
-                        "
+                        style="background-image: url('side.jpg')"
                     ></div>
                     <div class="bg-boxColor w-full lg:w-1/2 lg:py-6 py-9 px-6">
                         <h2
                             class="text-white text-3xl mb-10 text-center font-bold leading-10"
                         >
-                            PUBG <br />Championship
+                            Code Golf
                         </h2>
                         <form action="post">
                             <div class="mb-6">
@@ -150,16 +146,16 @@
 
                     // url
                     const url =
-                        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdrwBNEqWUJYhf7BHhYv2jVpSBUfBKyWOIsi6KsrNLMYfWlzw/formResponse";
+                        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeYYnhkjf2BfVh9P9Z5DmrvExJVNZ4RB65HNS-MkbPWRbRUyA/formResponse";
 
                     // post
                     let data = {
-                        "entry.1447400634": fname,
-                        "entry.579354149": lname,
-                        "entry.616355013": branch,
-                        "entry.1027570089": sem,
-                        "entry.678185229": inst,
-                        "entry.1423283227": mob,
+                        "entry.354931838": fname,
+                        "entry.2116358340": lname,
+                        "entry.1471598642": branch,
+                        "entry.935576430": sem,
+                        "entry.1972315005": inst,
+                        "entry.499265260": mob,
                     };
                     $.ajax({
                         type: "POST",
@@ -172,7 +168,7 @@
                             $("form")[0].reset();
 
                             // Redirect to google.com
-                            window.location.href = "https://tecxeon.github.io";
+                            window.location.href = "thankyou-20dfhsfsdfs3d";
                         },
                     });
                 });
