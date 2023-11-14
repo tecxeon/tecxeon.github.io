@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TECXEON '23</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-    <body class="bg-black text-white flex items-center justify-center h-screen">
-        <div class="text-center">
-            <img
-                src="logo.png"
-                alt="Your Event Logo"
-                class="w-96 h-96 mx-auto mb-4 bg-white md:container md:mx-auto"
-            />
-            <h1 class="text-6xl font-bold mb-7 font-sans">TECXEON '23</h1>
-            <a
-                href="https://linktr.ee/tecxeon"
-                class="bg-white hover:bg-gray-200 text-black font-bold py-4 px-8 rounded-full transition duration-300 ease-in-out hover:scale-105 inline-flex items-center"
-            >
-                Event Registrations
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 5l7 7-7 7"
-                    />
-                </svg>
-            </a>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Spline Viewer</title>
+    <!-- Include the Spline Viewer script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.497/build/spline-viewer.js"></script>
+    <style>
+        /* Make the body and html take up the entire viewport */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Make the spline viewer take up the entire viewport */
+        spline-viewer {
+            width: 100%;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Spline Viewer component -->
+<spline-viewer url="https://prod.spline.design/hstQZ1mvMTR4sqQp/scene.splinecode"></spline-viewer>
+
+</body>
 </html>
