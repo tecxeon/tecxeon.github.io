@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Register Now</title>
+        <title>UI Hackathon</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -203,20 +203,34 @@
             const scriptURL =
                 "https://script.google.com/macros/s/AKfycbwsiekOb89rkofGXTKC11c-uFPre3sG_-71PI9XWrEXkY0BmrK2UChwBBWOOirA1B7B/exec";
 
+            // change this to close regsistration
+            // <-------------------------------------------------------->
+            // [true -> enable registration / false -> disable registration]
+            const flag = true;
+            // <-------------------------------------------------------->
+
             form.addEventListener("submit", (e) => {
                 submit.disabled = true;
                 e.preventDefault();
                 let requestBody = new FormData(form);
-                fetch(scriptURL, { method: "POST", body: requestBody })
-                    .then((response) => {
-                        form.reset();
-                        window.location.href = "thankyou-150dfskfh34dj/";
-                        submit.disabled = false;
-                    })
-                    .catch((error) => {
-                        alert("Error!", error.message);
-                        submit.disabled = false;
-                    });
+
+                if (flag) {
+                    fetch(scriptURL, { method: "POST", body: requestBody })
+                        .then((response) => {
+                            form.reset();
+                            window.location.href =
+                                "thankyou/thankyou-150dfskfh34dj/";
+                            submit.disabled = false;
+                        })
+                        .catch((error) => {
+                            alert("Error!", error.message);
+                            submit.disabled = false;
+                        });
+                } else {
+                    form.reset();
+                    window.location.href = "thankyou/thankyou-regclosr233f3wa";
+                    submit.disabled = false;
+                }
             });
 
             // Select all required input elements
