@@ -1,2 +1,2 @@
 # Tecxeon
-Tecxeon registration templates
+Tecxeon website templates
